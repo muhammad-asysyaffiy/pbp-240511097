@@ -1,0 +1,103 @@
+/* Pencegahan horizontal scroll di semua ukuran layar (menggunakan clip agar position: sticky tetap berjalan) */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* ===== GAMBAR RESPONSIF (LKP 2B) ===== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== TIPOGRAFI FLUID DENGAN SATUAN RELATIF (rem & vw) ===== */
+.hero-serif {
+  font-size: clamp(2.1rem, 8.2vw, 7rem);
+  line-height: 1;
+}
+
+.hero-display {
+  font-size: clamp(2.35rem, 10.4vw, 8.75rem);
+  line-height: 0.88;
+}
+
+/* ===== HEADER & MAIN (MOBILE-FIRST DEFAULT) ===== */
+header#home {
+  padding: 2rem 1rem 0;
+}
+
+main {
+  width: 100%;
+}
+
+.section-container {
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ===== GRID PROYEK (.cards): MOBILE-FIRST 1 KOLOM (375px) ===== */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* ===== MEDIA QUERY 1: MOBILE KECIL (<= 480px, mis. iPhone SE 375px) ===== */
+@media (max-width: 480px) {
+  header#home {
+    padding: 1.5rem 0.75rem 0;
+  }
+
+  .hero-serif {
+    font-size: clamp(1.9rem, 9.5vw, 2.6rem);
+  }
+
+  .hero-display {
+    font-size: clamp(2.15rem, 12vw, 3.1rem);
+  }
+
+  .hero-portrait-wrap {
+    width: 240px;
+    margin-top: -1.75rem;
+  }
+
+  .nav-bar-inner {
+    gap: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ===== MEDIA QUERY 2: TABLET (>= 768px, mis. iPad 768px) ===== */
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  header#home {
+    padding: 2.5rem 1.5rem 0;
+  }
+
+  .section-container {
+    padding: 0 2rem;
+  }
+}
+
+/* ===== MEDIA QUERY 3: DESKTOP (>= 1024px, mis. Desktop 1200px) ===== */
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  header#home {
+    padding: 3.5rem 2rem 0;
+  }
+
+  .section-container {
+    padding: 0 2.5rem;
+  }
+}
